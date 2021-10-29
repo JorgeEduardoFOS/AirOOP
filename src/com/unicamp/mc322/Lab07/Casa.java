@@ -10,21 +10,20 @@ public class Casa extends Padrao {
 		this.piscina = piscina;
 	}
 	public String getPrice(int dias) {
-		double price = this.getDiariaBase() * this.getBanheiros() / this.getQuartos();
+		double price = diariaBase * banheiros / quartos;
 		if(piscina && dias < 8)
 			price *= (1 + dias);
 		else
 			price *= dias;		
-		return getDecimalFormat().format(price);
+		return df0.format(price);
 	}
 	public String getPrice() {
-		double price = this.getDiariaBase() * this.getBanheiros() / this.getQuartos();
+		double price = diariaBase * banheiros / quartos;
 		if(piscina)
 			price *= 2;		
-		return getDecimalFormat().format(price);
+		return df0.format(price);
 	}
 	public boolean getPiscina() {
 		return piscina;
 	}
 }
-//Calcula preço com e sem piscina, até 7 ou mais dias, default (sem dias) - Implementado, não testado
