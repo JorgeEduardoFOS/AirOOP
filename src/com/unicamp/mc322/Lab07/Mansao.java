@@ -7,10 +7,10 @@ public class Mansao extends Residencias {
 		this.area = area;
 	}
 	public String getPrice() {
-		return this.getDecimalFormat().format(getDiariaBase());
+		return df0.format(getDiariaBase());
 	}
 	public String getPrice(int dias, int pessoas) {
-		return getDecimalFormat().format(getDiariaBase() * Math.pow((100 * pessoas / area), dias - 1));	
+		return df0.format(getDiariaBase() * Math.pow((100 * pessoas / area), dias - 1));	
 	}
 	public double getArea() {
 		return area;
@@ -24,4 +24,3 @@ public class Mansao extends Residencias {
 	}
 
 }
-// implementado cálculo de preço default e com x dias sem testar
