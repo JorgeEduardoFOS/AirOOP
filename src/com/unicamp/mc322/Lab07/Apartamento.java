@@ -12,22 +12,20 @@ public class Apartamento extends Padrao {
 		this.sacada = sacada;
 	}
 	public String getPrice(int dias) {
-		double price = this.getDiariaBase() * (1 + andar * 0.01);
+		double price = diariaBase * (1 + andar * 0.01);
 		if(sacada)
 			price *= (dias + 1);
 		else
 			price *= dias;
-		return this.getDecimalFormat().format(price);
+		return df0.format(price);
 	}
 	public String getPrice() {
-		double price = this.getDiariaBase() * (1 + andar * 0.01);
+		double price = diariaBase * (1 + andar * 0.01);
 		if(sacada)
 			price *= 2;
-		return this.getDecimalFormat().format(price);
+		return df0.format(price);
 	}
 	public boolean getSacada() {
 		return sacada;
 	}
 }
-//Calcula preço default, calcula preço diárias, sacada, andar - Implementado, não testado
-//Construtores sem sacada, com sacada - Implementado, não testado
